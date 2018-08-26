@@ -1,0 +1,29 @@
+#############tips#############
+
+#######
+リストの内包表記を用いて三辺の長さがすべて10以下の整数で周囲の長さが24である直角三角形の3つの辺の長さを要素とするリストをつくれ
+
+max = 10
+
+l = [for a in range(1, max + 1) for b in range(1, max + 1) for c in range(1, max + 1) if a ** 2 + b ** 2 == c ** 2 and a + b + c == 24]
+
+上記を多重ループで表現すると...
+for a in range(1, max+1):
+     for b in range(1, max+1):
+             for c in range(1, max+1):
+                     if a ** 2 + b ** 2 == c ** 2 and a + b + c == 24:
+                             print(a, b, c)
+
+※printで表示はできたが、リストにうまく入れられていない
+
+
+######
+下記のように本の情報が入ったディクショナリのリストが与えられた時、本の名前を列挙するプログラムをかけ
+
+books = [{"name":"ModernC++Design", "author":" Andrei Alexandrescu"},{"name":"Essential Sqlalchemy", "author":"Andrindrescu"},{"name":"Cython", "author":"Kurt W. Smith"}]
+
+
+names = [n.get('name') for n in books]
+
+print(names)
+
